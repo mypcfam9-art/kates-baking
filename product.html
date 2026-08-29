@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products | Kates Baking</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #333;
+        }
+
+        header {
+            background: #f8a8c8;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        nav {
+            background: white;
+            text-align: center;
+            padding: 18px;
+            box-shadow: 0 2px 5px #ddd;
+        }
+
+        nav a {
+            color: #d94f82;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .products {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .products h2 {
+            color: #d94f82;
+            font-size: 35px;
+        }
+
+        .products p {
+            font-size: 18px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .product-box {
+            overflow: hidden;
+            background: #fff0f6;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(217, 79, 130, 0.12);
+            text-align: left;
+        }
+
+        .product-box img {
+            display: block;
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-box h3 {
+            color: #d94f82;
+            margin: 0 0 10px;
+        }
+
+        .product-box p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .product-link {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 11px 18px;
+            border-radius: 24px;
+            background: #d94f82;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .product-link:hover {
+            background: #b83d6b;
+        }
+
+        .cake-collection {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 55px auto 35px;
+            perspective: 1000px;
+        }
+
+        .cake-collection h2 {
+            grid-column: 1 / -1;
+            margin: 0 0 5px;
+            font-size: 30px;
+        }
+
+        .cake-card {
+            overflow: hidden;
+            border: 1px solid #f0cddd;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(217, 79, 130, 0.1);
+            text-align: left;
+            transform-style: preserve-3d;
+            transition: transform 220ms ease, box-shadow 220ms ease;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-7px) rotateX(2deg) rotateY(-2deg);
+            box-shadow: 0 12px 24px rgba(217, 79, 130, 0.2);
+        }
+
+        .cake-card img {
+            display: block;
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .cake-card div {
+            min-height: 118px;
+            padding: 18px;
+        }
+
+        .cake-card h3 {
+            margin: 0 0 8px;
+            color: #d94f82;
+            font-size: 19px;
+        }
+
+        .cake-card p {
+            margin: 0;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        @media (max-width: 850px) {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .cake-collection {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cake-collection {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background: #f8a8c8;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>KATES BAKING</h1>
+        <p>Catering & Supplies Trade Enterprise (PTY) LTD</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="catering.html">Catering</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="products">
+
+        <h2>Our Products</h2>
+
+        <p>
+            Delicious baked goods made with care and quality ingredients.
+        </p>
+
+        <div class="product-grid">
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Decorated celebration cake">
+                <div class="product-info">
+                    <h3>Cakes</h3>
+                    <p>Beautiful cakes for birthdays, celebrations and special occasions.</p>
+                    <a class="product-link" href="cakes.html">Explore All Cakes</a>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Freshly baked blueberry muffins">
+                <div class="product-info">
+                    <h3>Muffins</h3>
+                    <p>Freshly baked muffins made for breakfast, meetings and sharing.</p>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Assortment of freshly baked biscuits">
+                <div class="product-info">
+                    <h3>Biscuits</h3>
+                    <p>Melting moments, jam tarts, Romany biscuits, ginger biscuits and more.</p>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Golden freshly baked scones">
+                <div class="product-info">
+                    <h3>Scones</h3>
+                    <p>Golden, tender scones that are perfect with tea, jam and cream.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="cake-collection">
+            <h2>Cake Collection</h2>
+
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Classic vanilla cake">
+                <div><h3>Classic Vanilla Cake</h3><p>Light vanilla sponge with smooth, delicate frosting.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chocolate fudge cake">
+                <div><h3>Chocolate Fudge Cake</h3><p>Rich chocolate layers with a soft, fudgy finish.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1557979619-445218f326b9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Red velvet cake">
+                <div><h3>Red Velvet Cake</h3><p>Velvety red sponge finished with cream cheese frosting.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Carrot cake">
+                <div><h3>Carrot Cake</h3><p>Moist spiced carrot cake with a creamy topping.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Black forest cake">
+                <div><h3>Black Forest Cake</h3><p>Chocolate sponge layered with cherries and cream.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Lemon drizzle cake">
+                <div><h3>Lemon Drizzle Cake</h3><p>Fresh lemon sponge with a bright citrus drizzle.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Marble cake">
+                <div><h3>Marble Cake</h3><p>Beautiful swirls of vanilla and chocolate sponge.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Strawberry cream cake">
+                <div><h3>Strawberry Cream Cake</h3><p>Soft sponge with strawberries and smooth cream.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chocolate ganache cake">
+                <div><h3>Chocolate Ganache Cake</h3><p>Decadent chocolate cake covered in glossy ganache.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coconut cake">
+                <div><h3>Coconut Cake</h3><p>Soft coconut sponge with a gently sweet finish.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coffee cake">
+                <div><h3>Coffee Cake</h3><p>Aromatic coffee sponge made for relaxed teatime.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1575377427642-087cf684f04d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Rainbow layer cake">
+                <div><h3>Rainbow Layer Cake</h3><p>Colorful layered sponge for joyful celebrations.</p></div>
+            </article>
+        </div>
+
+        <p><strong>Prices coming soon.</strong></p>
+
+    </section>
+
+    <footer>
+        © 2026 Kates Baking Catering & Supplies Trade Enterprise (PTY) LTD
+    </footer>
+
+</body>
+</html>
