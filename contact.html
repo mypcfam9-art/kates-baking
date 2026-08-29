@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us | Kates Baking</title>
+
+	<style>
+		:root {
+			--rose: #c94f78;
+			--rose-dark: #8f304f;
+			--pink: #f8d9df;
+			--cream: #fffaf4;
+			--ink: #3e2b30;
+			--muted: #725e62;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			background: var(--cream);
+			color: var(--ink);
+			font-family: Arial, sans-serif;
+		}
+
+		header {
+			padding: 22px max(24px, calc((100% - 1180px) / 2));
+			background: white;
+			border-bottom: 1px solid #f0dfe1;
+		}
+
+		.brand {
+			color: var(--rose-dark);
+			font-family: Georgia, serif;
+			font-size: 24px;
+			font-weight: bold;
+			letter-spacing: 2px;
+			text-decoration: none;
+		}
+
+		nav {
+			display: flex;
+			justify-content: flex-end;
+			gap: 26px;
+			margin-top: -24px;
+		}
+
+		nav a {
+			color: var(--muted);
+			font-size: 14px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		nav a:hover,
+		nav a[aria-current="page"] {
+			color: var(--rose);
+		}
+
+		.hero {
+			display: grid;
+			grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+			gap: 50px;
+			align-items: center;
+			min-height: 520px;
+			padding: 74px max(24px, calc((100% - 1180px) / 2));
+			background: radial-gradient(circle at 75% 20%, #fff 0, transparent 28%), linear-gradient(125deg, #fffaf4 0%, #f9e2e4 100%);
+		}
+
+		.eyebrow {
+			color: var(--rose);
+			font-size: 13px;
+			font-weight: bold;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+		}
+
+		h1 {
+			max-width: 680px;
+			margin: 14px 0 20px;
+			color: var(--rose-dark);
+			font-family: Georgia, serif;
+			font-size: clamp(48px, 8vw, 94px);
+			line-height: 0.95;
+		}
+
+		.hero-copy > p {
+			max-width: 560px;
+			color: var(--muted);
+			font-size: 19px;
+			line-height: 1.7;
+		}
+
+		.hero-cake {
+			position: relative;
+			min-height: 340px;
+			padding: 18px;
+		}
+
+		.hero-cake::before {
+			position: absolute;
+			inset: 0 8% 8% 8%;
+			border: 1px solid rgba(201, 79, 120, 0.3);
+			border-radius: 46% 46% 12px 12px;
+			content: "";
+			transform: rotate(6deg);
+		}
+
+		.hero-cake img {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 330px;
+			border: 10px solid white;
+			border-radius: 46% 46% 12px 12px;
+			box-shadow: 0 22px 38px rgba(115, 55, 70, 0.2);
+			object-fit: cover;
+			transform: rotate(-4deg);
+		}
+
+		.contact-wrap {
+			display: grid;
+			grid-template-columns: 0.85fr 1.15fr;
+			gap: 30px;
+			max-width: 1180px;
+			margin: 0 auto;
+			padding: 76px 24px 100px;
+		}
+
+		.contact-intro h2,
+		.form-panel h2 {
+			margin: 10px 0 14px;
+			color: var(--rose-dark);
+			font-family: Georgia, serif;
+			font-size: 38px;
+		}
+
+		.contact-intro > p,
+		.form-panel > p {
+			color: var(--muted);
+			line-height: 1.7;
+		}
+
+		.contact-list {
+			display: grid;
+			gap: 14px;
+			margin-top: 30px;
+		}
+
+		.contact-item {
+			display: grid;
+			grid-template-columns: 42px 1fr;
+			gap: 14px;
+			align-items: center;
+			padding: 17px;
+			border: 1px solid #eedadd;
+			border-radius: 8px;
+			background: white;
+		}
+
+		.contact-icon {
+			display: grid;
+			width: 38px;
+			height: 38px;
+			place-items: center;
+			border-radius: 50%;
+			background: var(--pink);
+			color: var(--rose-dark);
+			font-size: 18px;
+		}
+
+		.contact-item strong {
+			display: block;
+			margin-bottom: 4px;
+			color: var(--rose-dark);
+		}
+
+		.contact-item a,
+		.contact-item span {
+			color: var(--muted);
+			font-size: 14px;
+			text-decoration: none;
+		}
+
+		.form-panel {
+			padding: 36px;
+			border-top: 5px solid var(--rose);
+			background: white;
+			box-shadow: 0 14px 35px rgba(115, 55, 70, 0.1);
+		}
+
+		form {
+			display: grid;
+			gap: 18px;
+			margin-top: 26px;
+		}
+
+		label {
+			display: grid;
+			gap: 7px;
+			color: var(--rose-dark);
+			font-size: 13px;
+			font-weight: bold;
+		}
+
+		input,
+		select,
+		textarea {
+			width: 100%;
+			padding: 14px 15px;
+			border: 1px solid #e8ced4;
+			border-radius: 5px;
+			background: #fffdfb;
+			color: var(--ink);
+			font: inherit;
+		}
+
+		textarea {
+			min-height: 125px;
+			resize: vertical;
+		}
+
+		input:focus,
+		select:focus,
+		textarea:focus {
+			outline: 2px solid #efb2c4;
+			border-color: var(--rose);
+		}
+
+		.send-button {
+			padding: 15px 22px;
+			border: 0;
+			border-radius: 4px;
+			background: var(--rose);
+			color: white;
+			cursor: pointer;
+			font-weight: bold;
+		}
+
+		.send-button:hover {
+			background: var(--rose-dark);
+		}
+
+		footer {
+			padding: 25px 20px;
+			background: var(--rose-dark);
+			color: white;
+			text-align: center;
+			font-size: 14px;
+		}
+
+		@media (max-width: 760px) {
+			header {
+				text-align: center;
+			}
+
+			nav {
+				justify-content: center;
+				margin-top: 18px;
+				gap: 16px;
+				flex-wrap: wrap;
+			}
+
+			.hero,
+			.contact-wrap {
+				grid-template-columns: 1fr;
+			}
+
+			.hero {
+				gap: 22px;
+				padding-top: 55px;
+				text-align: center;
+			}
+
+			.hero-copy > p {
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+			.hero-cake {
+				min-height: 270px;
+			}
+
+			.hero-cake img {
+				height: 270px;
+			}
+
+			.form-panel {
+				padding: 26px 20px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<a class="brand" href="index.html">KATES BAKING</a>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="product.html">Products</a>
+			<a href="cakes.html">All Cakes</a>
+			<a href="contact.html" aria-current="page">Contact</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="hero-copy">
+				<div class="eyebrow">Let's make it delicious</div>
+				<h1>Tell us what you are celebrating.</h1>
+				<p>From a first birthday to a grand South African celebration, our bakers are ready to shape your idea into something unforgettable.</p>
+			</div>
+			<div class="hero-cake">
+				<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Beautiful decorated celebration cake">
+			</div>
+		</section>
+
+		<section class="contact-wrap">
+			<div class="contact-intro">
+				<div class="eyebrow">Reach the bakery</div>
+				<h2>We would love to hear from you.</h2>
+				<p>Share your cake idea, event details or catering needs. Send us a message and the Kates Baking team will get back to you.</p>
+
+				<div class="contact-list">
+					<div class="contact-item">
+						<div class="contact-icon">@</div>
+						<div><strong>Email</strong><a href="mailto:info.kbcstradeenterprise@gmail.com">info.kbcstradeenterprise@gmail.com</a></div>
+					</div>
+					<div class="contact-item">
+						<div class="contact-icon">&#9742;</div>
+						<div><strong>Phone</strong><span>Coming Soon</span></div>
+					</div>
+					<div class="contact-item">
+						<div class="contact-icon">&#9906;</div>
+						<div><strong>Location</strong><span>South Africa</span></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-panel">
+				<div class="eyebrow">Start an enquiry</div>
+				<h2>Let’s plan your cake.</h2>
+				<p>Tell us a little about what you need and we will prepare an email for the bakery.</p>
+				<form id="contact-form">
+					<label>Name<input id="client-name" type="text" required placeholder="Your name"></label>
+					<label>Email<input id="client-email" type="email" required placeholder="you@example.com"></label>
+					<label>What can we bake for you?
+						<select id="enquiry-type" required>
+							<option value="">Choose an option</option>
+							<option>Celebration cake</option>
+							<option>Customized cake</option>
+							<option>Wedding cake</option>
+							<option>Catering enquiry</option>
+						</select>
+					</label>
+					<label>Message<textarea id="client-message" required placeholder="Tell us about your date, theme, flavor or guest count..."></textarea></label>
+					<button class="send-button" type="submit">Send Enquiry</button>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		© 2026 Kates Baking Catering &amp; Supplies Trade Enterprise (PTY) LTD
+	</footer>
+
+	<script>
+		document.getElementById("contact-form").addEventListener("submit", (event) => {
+			event.preventDefault();
+			const name = document.getElementById("client-name").value;
+			const email = document.getElementById("client-email").value;
+			const enquiry = document.getElementById("enquiry-type").value;
+			const message = document.getElementById("client-message").value;
+			const subject = encodeURIComponent(`${enquiry} enquiry from ${name}`);
+			const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nEnquiry: ${enquiry}\n\n${message}`);
+			window.location.href = `mailto:info.kbcstradeenterprise@gmail.com?subject=${subject}&body=${body}`;
+		});
+	</script>
+</body>
+</html>
