@@ -1,302 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Cakes | Kates Baking Catering and Supplies</title>
-
-    <meta name="description" content="Browse our delicious selection of celebration and custom cakes from Kates Baking Catering and Supplies.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #fff7fb;
-            color: #333;
-        }
-
-        header {
-            background: #e91e63;
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            font-size: 16px;
-        }
-
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        nav a {
-            color: #e91e63;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .intro {
-            text-align: center;
-            padding: 45px 20px 25px;
-        }
-
-        .intro h2 {
-            color: #e91e63;
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .intro p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.6;
-        }
-
-        .cakes {
-            max-width: 1200px;
-            margin: 20px auto 60px;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .cake-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
-            transition: transform 0.3s ease;
-        }
-
-        .cake-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .cake-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-            background: #f8d7e5;
-        }
-
-        .cake-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .cake-info h3 {
-            color: #e91e63;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .cake-info p {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .order-btn {
-            display: inline-block;
-            background: #e91e63;
-            color: white;
-            text-decoration: none;
-            padding: 11px 22px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .order-btn:hover {
-            background: #c2185b;
-        }
-
-        footer {
-            background: #e91e63;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 25px;
-            }
-
-            .intro h2 {
-                font-size: 25px;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 5px 8px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <h1>Kates Baking</h1>
-        <p>Catering & Supplies Trade Enterprise</p>
+<header>
+        <h1>KATES BAKING</h1>
+        <p>Catering & Supplies Trade Enterprise (PTY) LTD</p>
     </header>
 
     <nav>
         <a href="index.html">Home</a>
         <a href="product.html">Products</a>
+        <a href="catering.html">Catering</a>
         <a href="contact.html">Contact</a>
     </nav>
 
-    <section class="intro">
-        <h2>Our Cakes 🎂</h2>
+    <section class="products">
+
+        <h2>Our Products</h2>
+
         <p>
-            Discover our delicious selection of celebration cakes,
-            custom cakes and homestyle favourites, freshly prepared
-            for your special occasion.
+            Delicious baked goods made with care and quality ingredients.
         </p>
-    </section>
 
-    <section class="cakes">
+        <div class="product-grid">
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Decorated celebration cake">
+                <div class="product-info">
+                    <h3>Cakes</h3>
+                    <p>Beautiful cakes for birthdays, celebrations and special occasions.</p>
+                    <a class="product-link" href="cakes.html">Explore All Cakes</a>
+                </div>
+            </article>
 
-        <!-- CAKE 1 -->
-        <div class="cake-card">
-            <img src="images/cake1.jpg" alt="Celebration Cake" class="cake-image">
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Freshly baked blueberry muffins">
+                <div class="product-info">
+                    <h3>Muffins</h3>
+                    <p>Freshly baked muffins made for breakfast, meetings and sharing.</p>
+                </div>
+            </article>
 
-            <div class="cake-info">
-                <h3>Celebration Cake</h3>
-                <p>Beautifully prepared cake perfect for birthdays and special celebrations.</p>
-                <div class="price">From R350</div>
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Assortment of freshly baked biscuits">
+                <div class="product-info">
+                    <h3>Biscuits</h3>
+                    <p>Melting moments, jam tarts, Romany biscuits, ginger biscuits and more.</p>
+                </div>
+            </article>
 
-                <a class="order-btn"
-                   href="https://wa.me/YOURNUMBER?text=Hi%20Kates%20Baking,%20I%20would%20like%20to%20order%20a%20Celebration%20Cake.">
-                    Order Now
-                </a>
-            </div>
+            <article class="product-box">
+                <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Golden freshly baked scones">
+                <div class="product-info">
+                    <h3>Scones</h3>
+                    <p>Golden, tender scones that are perfect with tea, jam and cream.</p>
+                </div>
+            </article>
         </div>
 
-        <!-- CAKE 2 -->
-        <div class="cake-card">
-            <img src="images/cake2.jpg" alt="Chocolate Cake" class="cake-image">
+        <div class="cake-collection">
+            <h2>Cake Collection</h2>
 
-            <div class="cake-info">
-                <h3>Chocolate Cake</h3>
-                <p>A rich and delicious chocolate cake for chocolate lovers.</p>
-                <div class="price">From R350</div>
-
-                <a class="order-btn"
-                   href="https://wa.me/YOURNUMBER?text=Hi%20Kates%20Baking,%20I%20would%20like%20to%20order%20a%20Chocolate%20Cake.">
-                    Order Now
-                </a>
-            </div>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Classic vanilla cake">
+                <div><h3>Classic Vanilla Cake</h3><p>Light vanilla sponge with smooth, delicate frosting.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chocolate fudge cake">
+                <div><h3>Chocolate Fudge Cake</h3><p>Rich chocolate layers with a soft, fudgy finish.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1557979619-445218f326b9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Red velvet cake">
+                <div><h3>Red Velvet Cake</h3><p>Velvety red sponge finished with cream cheese frosting.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Carrot cake">
+                <div><h3>Carrot Cake</h3><p>Moist spiced carrot cake with a creamy topping.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Black forest cake">
+                <div><h3>Black Forest Cake</h3><p>Chocolate sponge layered with cherries and cream.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Lemon drizzle cake">
+                <div><h3>Lemon Drizzle Cake</h3><p>Fresh lemon sponge with a bright citrus drizzle.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Marble cake">
+                <div><h3>Marble Cake</h3><p>Beautiful swirls of vanilla and chocolate sponge.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Strawberry cream cake">
+                <div><h3>Strawberry Cream Cake</h3><p>Soft sponge with strawberries and smooth cream.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chocolate ganache cake">
+                <div><h3>Chocolate Ganache Cake</h3><p>Decadent chocolate cake covered in glossy ganache.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coconut cake">
+                <div><h3>Coconut Cake</h3><p>Soft coconut sponge with a gently sweet finish.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coffee cake">
+                <div><h3>Coffee Cake</h3><p>Aromatic coffee sponge made for relaxed teatime.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1575377427642-087cf684f04d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Rainbow layer cake">
+                <div><h3>Rainbow Layer Cake</h3><p>Colorful layered sponge for joyful celebrations.</p></div>
+            </article>
         </div>
 
-        <!-- CAKE 3 -->
-        <div class="cake-card">
-            <img src="images/cake3.jpg" alt="Vanilla Cake" class="cake-image">
-
-            <div class="cake-info">
-                <h3>Vanilla Cake</h3>
-                <p>A soft, delicious vanilla cake suitable for any occasion.</p>
-                <div class="price">From R350</div>
-
-                <a class="order-btn"
-                   href="https://wa.me/YOURNUMBER?text=Hi%20Kates%20Baking,%20I%20would%20like%20to%20order%20a%20Vanilla%20Cake.">
-                    Order Now
-                </a>
-            </div>
-        </div>
-
-        <!-- CAKE 4 -->
-        <div class="cake-card">
-            <img src="images/cake4.jpg" alt="Red Velvet Cake" class="cake-image">
-
-            <div class="cake-info">
-                <h3>Red Velvet Cake</h3>
-                <p>A beautiful red velvet cake with a smooth and creamy finish.</p>
-                <div class="price">From R400</div>
-
-                <a class="order-btn"
-                   href="https://wa.me/YOURNUMBER?text=Hi%20Kates%20Baking,%20I%20would%20like%20to%20order%20a%20Red%20Velvet%20Cake.">
-                    Order Now
-                </a>
-            </div>
-        </div>
-
-        <!-- CAKE 5 -->
-        <div class="cake-card">
-            <img src="images/cake5.jpg" alt="Birthday Cake" class="cake-image">
-
-            <div class="cake-info">
-                <h3>Birthday Cake</h3>
-                <p>A special birthday cake that can be customised to your theme.</p>
-                <div class="price">From R400</div>
-
-                <a class="order-btn"
-                   href="https://wa.me/YOURNUMBER?text=Hi%20Kates%20Baking,%20I%20would%20like%20to%20order%20a%20Birthday%20Cake.">
-                    Order Now
-                </a>
-            </div>
-        </div>
-
-        <!-- CAKE 6 -->
-        <div class="cake-card">
-            <img src="images/cake6.jpg" alt="Custom Cake" class="cake-image">
-
-            <div class="cake-info">
-                <h3>Custom Cake</h3>
-                <p>Tell us your theme, colours and design and we'll create something special.</p>
-                <div class="price">Get a Quote</div>
-
-                <a class="order-btn"
-                   href="https://wa.me/YOURNUMBER?text=Hi%20Kates%20Baking,%20I%20would%20like%20a%20quote%20for%20a%20Custom%20Cake.">
-                    Request Quote
-                </a>
-            </div>
-        </div>
+        <p><strong>Prices coming soon.</strong></p>
 
     </section>
 
     <footer>
-        <p>© 2026 Kates Baking Catering and Supplies Trade Enterprise</p>
-        <p>
-            <a href="contact.html">Contact Us</a>
-        </p>
+        © 2026 Kates Baking Catering & Supplies Trade Enterprise (PTY) LTD
     </footer>
 
 </body>
 </html>
+
+
