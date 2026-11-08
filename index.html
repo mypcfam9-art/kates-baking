@@ -1,376 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff5f8">
   <link rel="icon" type="image/png" href="/favicon.png">
   <title>Kates Baking | Cakes, Biscuits, Muffins & Catering Across South Africa</title>
-<meta name="description" content="Discover Kates Baking Catering and Supplies Trade Enterprise. Explore delicious cakes, muffins, biscuits, scones and catering services. Serving customers across South Africa.">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: white;
-            color: #333;
-        }
-
-        header {
-            background: #f8a8c8;
-            color: white;
-            padding: 50px 20px;
-        }
-
-        .brand-lockup {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .brand-logo {
-            width: 112px;
-            height: 112px;
-            flex: 0 0 auto;
-            border-radius: 50%;
-            background: white;
-            box-shadow: 0 5px 14px rgba(143, 48, 79, 0.18);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 38px;
-        }
-
-        header p {
-            margin: 10px 0 0;
-            font-size: 18px;
-        }
-
-        nav {
-            text-align: center;
-            padding: 18px;
-            background: white;
-            box-shadow: 0 2px 5px #ddd;
-        }
-
-        nav a {
-            color: #d94f82;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        .welcome {
-            position: relative;
-            overflow: hidden;
-            min-height: 570px;
-            background: #fff0f6;
-        }
-
-        .welcome-slide {
-            position: absolute;
-            inset: 0;
-            display: grid;
-            align-items: center;
-            grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
-            gap: 35px;
-            padding: 55px max(30px, calc((100% - 1100px) / 2));
-            opacity: 0;
-            transform: translateX(28px) scale(1.02);
-            transition: opacity 800ms ease, transform 800ms ease;
-            pointer-events: none;
-        }
-
-        .welcome-slide.active {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-            pointer-events: auto;
-        }
-
-        .slide-copy {
-            position: relative;
-            z-index: 1;
-        }
-
-        .slide-label {
-            color: #d94f82;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .welcome-slide h2 {
-            margin: 12px 0;
-            color: #b83d6b;
-            font-size: clamp(36px, 5vw, 64px);
-            line-height: 1.05;
-        }
-
-        .welcome-slide p {
-            max-width: 480px;
-            margin: 0;
-            font-size: 19px;
-            line-height: 1.6;
-        }
-
-        .slide-photo {
-            width: 100%;
-            max-width: 490px;
-            height: 350px;
-            border: 10px solid white;
-            border-radius: 48% 48% 12px 12px;
-            box-shadow: 0 18px 35px rgba(156, 56, 94, 0.22);
-            object-fit: cover;
-            transform: rotate(2deg);
-        }
-
-        .slide-controls {
-            position: absolute;
-            bottom: 28px;
-            left: 50%;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transform: translateX(-50%);
-        }
-
-        .slide-dot,
-        .slide-next {
-            border: 0;
-            cursor: pointer;
-        }
-
-        .slide-dot {
-            width: 10px;
-            height: 10px;
-            padding: 0;
-            border-radius: 50%;
-            background: #e5a1b9;
-        }
-
-        .slide-dot.active {
-            width: 28px;
-            border-radius: 8px;
-            background: #d94f82;
-        }
-
-        .slide-next {
-            margin-left: 10px;
-            padding: 8px 14px;
-            border-radius: 18px;
-            background: #d94f82;
-            color: white;
-            font-size: 18px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #d94f82;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            margin-top: 15px;
-        }
-
-        .about {
-            background: #fff0f6;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .about h2 {
-            color: #d94f82;
-        }
-
-        .about p {
-            max-width: 800px;
-            margin: 15px auto;
-            line-height: 1.6;
-        }
-
-        .contact {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .contact h2 {
-            color: #d94f82;
-        }
-
-        footer {
-            background: #f8a8c8;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        @media (max-width: 720px) {
-            .welcome {
-                min-height: 710px;
-            }
-
-            .welcome-slide {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 45px 25px 70px;
-                text-align: center;
-            }
-
-            .slide-copy {
-                order: 1;
-            }
-
-            .slide-photo {
-                order: 2;
-                height: 270px;
-                margin: 0 auto;
-            }
-
-            .welcome-slide p {
-                margin: 0 auto;
-            }
-
-            .button {
-                margin-top: 12px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .welcome-slide {
-                transition: none;
-            }
-        }
-    </style>
+  <meta name="description" content="Discover Kates Baking Catering and Supplies Trade Enterprise. Explore delicious cakes, muffins, biscuits, scones and catering services. Serving customers across South Africa.">
+  <style>
+    :root{--pink:#d94f82;--deep:#a92e60;--soft:#fff0f6;--ink:#34232b;--muted:#725e67;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+    a{color:inherit}
+    .topline{height:5px;background:linear-gradient(90deg,#f7bfd2,#d94f82,#f9d7e4)}
+    header{position:relative;z-index:5;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid #f5dce6}
+    .brand-lockup{max-width:1180px;margin:auto;padding:17px 28px;display:flex;align-items:center;gap:16px}
+    .brand-logo{width:70px;height:70px;object-fit:contain;border-radius:50%;background:white;box-shadow:0 8px 24px #a92e6020}
+    header h1{font-size:clamp(22px,3vw,30px);letter-spacing:2px;margin:0;color:var(--deep)}
+    header p{margin:6px 0 0;color:var(--muted);font-size:13px;letter-spacing:.5px}
+    nav{display:flex;justify-content:center;gap:clamp(18px,4vw,48px);padding:16px 18px;background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 8px 24px #59263b0b}
+    nav a{text-decoration:none;color:#78475b;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+    nav a:hover{color:var(--pink)}
+    .hero{min-height:650px;position:relative;overflow:hidden;display:grid;align-items:center;background:radial-gradient(ellipse at 76% 46%,#f9c9da 0,transparent 34%),linear-gradient(120deg,#fff8fb,#ffeaf2 55%,#fff)}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .hero:before{width:480px;height:480px;right:-150px;top:-190px;border:1px solid #e9a9c2aa;box-shadow:0 0 0 35px #f8d8e355,0 0 0 75px #f8d8e322}
+    .hero:after{width:260px;height:260px;left:-120px;bottom:-150px;background:#f7c7d944;filter:blur(3px)}
+    .hero-inner{width:min(1160px,100%);margin:auto;padding:70px 34px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--pink);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:1px;background:var(--pink)}
+    .hero h2{font-family:Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:1.02;font-weight:500;letter-spacing:-2px;color:#7f294d;margin:20px 0}
+    .hero-copy>p{font-size:17px;line-height:1.8;color:#715865;max-width:500px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:15px 25px;border-radius:999px;background:linear-gradient(135deg,#e66b99,#bd3c70);color:#fff;font-size:13px;font-weight:700;letter-spacing:.5px;box-shadow:0 12px 28px #c64d7a45;transition:transform .25s,box-shadow .25s}
+    .button:hover{transform:translateY(-4px);box-shadow:0 18px 34px #c64d7a55}
+    .button.secondary{background:#ffffffa8;color:#a93665;border:1px solid #e9b2c7;box-shadow:none}
+    .hero-art{min-height:430px;position:relative;display:grid;place-items:center;perspective:1000px}
+    .orbit{position:absolute;width:min(390px,80vw);aspect-ratio:1;border:1px solid #e9a9c288;border-radius:50%;transform:rotateX(68deg) rotateZ(-18deg);box-shadow:0 0 0 24px #fff7,0 0 0 25px #e9a9c255}
+    .cake-frame{position:relative;width:min(390px,82vw);height:380px;border:12px solid #fff;border-radius:48% 48% 26px 26px;overflow:hidden;box-shadow:0 35px 65px #8d3b5b35, inset 0 0 0 1px #fff;transform:rotateY(-9deg) rotateX(3deg);animation:float 6s ease-in-out infinite}
+    .cake-frame img{width:100%;height:100%;object-fit:cover;display:block}
+    .float-tag{position:absolute;right:0;bottom:40px;background:#ffffffdf;backdrop-filter:blur(12px);border:1px solid #fff;padding:15px 20px;border-radius:18px;box-shadow:0 15px 35px #8d3b5b20;color:#843251;font-family:Georgia,serif;font-size:17px;transform:rotate(3deg)}
+    .sparkle{position:absolute;color:#d94f82;font-size:28px;animation:twinkle 3s ease-in-out infinite}
+    .s1{top:42px;right:16%}.s2{bottom:55px;left:8%;animation-delay:1s}
+    @keyframes float{0%,100%{transform:translateY(0) rotateY(-9deg) rotateX(3deg)}50%{transform:translateY(-14px) rotateY(-5deg) rotateX(5deg)}}
+    @keyframes twinkle{0%,100%{opacity:.45;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+    .trust-strip{display:flex;justify-content:center;gap:clamp(25px,6vw,90px);flex-wrap:wrap;padding:22px;background:#fff;border-bottom:1px solid #f7e6ed;color:#8b5b6e;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+    .section{padding:90px 24px}
+    .section-inner{max-width:1100px;margin:auto}
+    .section-heading{text-align:center;margin-bottom:42px}
+    .section-heading span{color:var(--pink);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+    .section-heading h2{font-family:Georgia,serif;font-size:clamp(34px,4vw,48px);font-weight:500;color:#81304f;margin:12px 0}
+    .section-heading p{max-width:650px;margin:0 auto;color:var(--muted);line-height:1.7}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .feature{background:linear-gradient(145deg,#fff,#fff4f8);border:1px solid #f4dce6;border-radius:22px;padding:28px;box-shadow:0 14px 35px #6b29400b;transition:transform .3s,box-shadow .3s}
+    .feature:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:0 22px 45px #6b294018}
+    .feature .number{font-family:Georgia,serif;font-size:35px;color:#e5a0b9}
+    .feature h3{color:#9f3c64;font-family:Georgia,serif;font-size:23px;font-weight:500;margin:14px 0 9px}
+    .feature p{color:var(--muted);line-height:1.7;margin:0;font-size:14px}
+    .about{background:linear-gradient(135deg,#fff0f6,#fff9fb);text-align:center}
+    .about p{max-width:790px;margin:15px auto;color:#715865;line-height:1.9}
+    .contact{text-align:center;background:#fff}
+    .contact-details{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .contact-details p{margin:0;padding:14px 20px;background:#fff4f8;border:1px solid #f4dce6;border-radius:14px;color:#815064}
+    footer{background:#7f294d;color:#fff;text-align:center;padding:28px 18px;font-size:12px;letter-spacing:.6px}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:760px){.brand-lockup{padding:14px 18px}.brand-logo{width:58px;height:58px}.brand-lockup p{font-size:11px}.hero-inner{grid-template-columns:1fr;text-align:center;padding:58px 22px 65px;gap:10px}.hero-copy>p{margin:0 auto}.eyebrow{justify-content:center}.actions{justify-content:center}.hero-art{min-height:370px}.cake-frame{height:320px}.feature-grid{grid-template-columns:1fr}.section{padding:68px 20px}nav{gap:17px;padding:14px 8px}nav a{font-size:10px;letter-spacing:.5px}.trust-strip{font-size:10px;gap:18px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
-
 <body>
-
-    <header>
-        <div class="brand-lockup">
-            <img class="brand-logo" src="logo.svg" alt="Kates Baking logo">
-            <div>
-                <h1>KATES BAKING</h1>
-                <p>Catering &amp; Supplies Trade Enterprise (PTY) LTD</p>
-            </div>
+  <div class="topline"></div>
+  <header>
+    <div class="brand-lockup">
+      <img class="brand-logo" src="logo.svg" alt="Kates Baking logo">
+      <div><h1>KATES BAKING</h1><p>Catering &amp; Supplies Trade Enterprise (PTY) LTD</p></div>
+    </div>
+  </header>
+  <nav aria-label="Main navigation">
+    <a href="#">Home</a><a href="product.html">Products</a><a href="#catering">Catering</a><a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">Welcome to Kates Baking</div>
+          <h2>Made for your sweetest moments.</h2>
+          <p>Your trusted baking, catering and supplies partner, creating beautiful treats with care. From homestyle favourites to celebration cakes, make every occasion a little sweeter.</p>
+          <div class="actions"><a href="product.html" class="button">Explore Our Products</a><a href="contact.html" class="button secondary">Get in Touch</a></div>
         </div>
-    </header>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="product.html">Products</a>
-        <a href="#">Catering</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <section class="welcome" aria-label="Kates Baking welcome slideshow">
-        <article class="welcome-slide active">
-            <div class="slide-copy">
-                <div class="slide-label">Welcome to Kates Baking</div>
-                <h2>Made for your sweetest moments.</h2>
-                <p>Your trusted baking, catering and supplies partner, creating beautiful treats with care.</p>
-                <a href="product.html" class="button">Explore Our Cakes</a>
-            </div>
-            <img class="slide-photo" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Decorated celebration cake">
-        </article>
-
-        <article class="welcome-slide">
-            <div class="slide-copy">
-                <div class="slide-label">Freshly baked</div>
-                <h2>A little joy in every layer.</h2>
-                <p>Discover cakes prepared for birthdays, weddings, events and everyday celebrations.</p>
-                <a href="product.html" class="button">View Products</a>
-            </div>
-            <img class="slide-photo" src="https://images.unsplash.com/photo-1557979619-445218f326b9?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Elegant frosted cake">
-        </article>
-
-        <article class="welcome-slide">
-            <div class="slide-copy">
-                <div class="slide-label">Your celebration starts here</div>
-                <h2>Beautiful cakes, made your way.</h2>
-                <p>From homestyle favorites to custom creations, find a cake made for your story.</p>
-                <a href="cakes.html" class="button">See All Cakes</a>
-            </div>
-            <img class="slide-photo" src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Layered celebration cake">
-        </article>
-
-        <article class="welcome-slide">
-            <div class="slide-copy">
-                <div class="slide-label">Sweet celebrations</div>
-                <h2>Every occasion deserves cake.</h2>
-                <p>Share a beautiful centerpiece made with thoughtful details and delicious flavor.</p>
-                <a href="cakes.html#celebration-cakes" class="button">Find Your Cake</a>
-            </div>
-            <img class="slide-photo" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Decorated party cake">
-        </article>
-
-        <article class="welcome-slide">
-            <div class="slide-copy">
-                <div class="slide-label">Made with heart</div>
-                <h2>Flavours to remember.</h2>
-                <p>Explore classic favorites and creative custom cakes from the Kates Baking collection.</p>
-                <a href="cakes.html#homestyle-favorites" class="button">Explore Flavours</a>
-            </div>
-            <img class="slide-photo" src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Freshly decorated cream cake">
-        </article>
-
-        <div class="slide-controls" aria-label="Slideshow controls">
-            <button class="slide-dot active" type="button" aria-label="Show welcome slide 1"></button>
-            <button class="slide-dot" type="button" aria-label="Show welcome slide 2"></button>
-            <button class="slide-dot" type="button" aria-label="Show welcome slide 3"></button>
-            <button class="slide-dot" type="button" aria-label="Show welcome slide 4"></button>
-            <button class="slide-dot" type="button" aria-label="Show welcome slide 5"></button>
-            <button class="slide-next" type="button" aria-label="Next welcome slide">&#8594;</button>
+        <div class="hero-art" aria-label="A beautifully decorated celebration cake">
+          <div class="orbit"></div><span class="sparkle s1">✦</span><span class="sparkle s2">✧</span>
+          <div class="cake-frame"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1000&amp;q=90" alt="Decorated celebration cake"></div>
+          <div class="float-tag">Baked with care ♡</div>
         </div>
+      </div>
     </section>
-
-    <section class="about">
-        <h2>About Kates Baking</h2>
-
-        <p>
-            Kates Baking Catering & Supplies Trade Enterprise (PTY) LTD
-            provides delicious baked goods and catering services made
-            with care and quality ingredients.
-        </p>
-
-        <p>
-            We provide cakes, muffins, biscuits, scones and other
-            delicious treats for different occasions.
-        </p>
+    <div class="trust-strip"><span>Beautiful celebration cakes</span><span>Freshly baked favourites</span><span>Serving across South Africa</span></div>
+    <section class="section" id="catering">
+      <div class="section-inner">
+        <div class="section-heading reveal"><span>Discover the collection</span><h2>A little joy in every bite.</h2><p>Explore delicious treats for celebrations, gatherings and everyday moments.</p></div>
+        <div class="feature-grid">
+          <article class="feature reveal"><div class="number">01</div><h3>Cakes</h3><p>From homestyle favourites to beautiful celebration and customized cakes, made to bring your moments to life.</p></article>
+          <article class="feature reveal"><div class="number">02</div><h3>Biscuits &amp; Muffins</h3><p>Enjoy familiar favourites and sweet treats, including biscuits and freshly baked muffins.</p></article>
+          <article class="feature reveal"><div class="number">03</div><h3>Scones &amp; Catering</h3><p>Thoughtful baked treats and catering services for different occasions and gatherings.</p></article>
+        </div>
+        <div style="text-align:center;margin-top:35px"><a href="product.html" class="button">View Products</a></div>
+      </div>
     </section>
-
-    <section class="contact">
-        <h2>Contact Kates Baking</h2>
-
-        <p>📞 Phone: Coming Soon</p>
-        <p>📱 WhatsApp: Coming Soon</p>
-        <p>📧 Email: Coming Soon</p>
-        <p>📍 Location: Coming Soon</p>
+    <section class="section about">
+      <div class="section-inner reveal">
+        <div class="section-heading"><span>Our story</span><h2>About Kates Baking</h2></div>
+        <p>Kates Baking Catering &amp; Supplies Trade Enterprise (PTY) LTD provides delicious baked goods and catering services made with care and quality ingredients.</p>
+        <p>We provide cakes, muffins, biscuits, scones and other delicious treats for different occasions, serving customers across South Africa.</p>
+      </div>
     </section>
-
-    <footer>
-        
-    </footer>
-
-    <script>
-        const slides = document.querySelectorAll(".welcome-slide");
-        const dots = document.querySelectorAll(".slide-dot");
-        const nextSlide = document.querySelector(".slide-next");
-        let currentSlide = 0;
-
-        function showSlide(slideNumber) {
-            currentSlide = (slideNumber + slides.length) % slides.length;
-            slides.forEach((slide, index) => slide.classList.toggle("active", index === currentSlide));
-            dots.forEach((dot, index) => dot.classList.toggle("active", index === currentSlide));
-        }
-
-        dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
-        nextSlide.addEventListener("click", () => showSlide(currentSlide + 1));
-        setInterval(() => showSlide(currentSlide + 1), 6000);
-    </script>
-
+    <section class="section contact">
+      <div class="section-inner reveal">
+        <div class="section-heading"><span>We would love to hear from you</span><h2>Contact Kates Baking</h2><p>Get in touch with us for product and catering enquiries.</p></div>
+        <div class="contact-details"><p>☎ Phone: Coming Soon</p><p>▣ WhatsApp: Coming Soon</p><p>✉ Email: Coming Soon</p><p>⌖ Location: South Africa</p></div>
+      </div>
+    </section>
+  </main>
+  <footer>© Kates Baking Catering &amp; Supplies Trade Enterprise (PTY) LTD</footer>
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else { revealItems.forEach(item => item.classList.add('visible')); }
+  </script>
 </body>
 </html>
