@@ -3,32 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explore All Cakes | Kates Baking</title>
+<title>Celebration & Kids Cakes | Kates Baking</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--pink:#d94f82;--deep:#92385d;--soft:#fff0f6;--ink:#49343e}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:#fff}
-header{text-align:center;padding:38px 18px;background:linear-gradient(135deg,#ffe5ef,#fff8fb)}
-header h1{margin:0;color:var(--deep);font-family:Georgia,serif;font-size:clamp(32px,5vw,48px)}
-header p{color:#805c6c;margin:10px 0 0}
-nav{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:17px;background:white;box-shadow:0 4px 18px #0000000b;position:sticky;top:0;z-index:5}
-nav a{color:var(--pink);font-weight:bold;text-decoration:none;padding:10px 16px;border-radius:30px;background:var(--soft);font-size:13px}
-.intro{text-align:center;padding:45px 18px 20px}.intro h2{font-family:Georgia,serif;color:var(--deep);font-size:36px;margin:0 0 10px}.intro p{color:#765e69;line-height:1.6}
-.kids-section,.collection-section{max-width:1120px;margin:25px auto 65px;padding:28px 22px}
-.section-title{text-align:center;color:var(--pink);font-size:30px;letter-spacing:2px;margin:0 0 12px}
-.section-desc{text-align:center;color:#765e69;margin:0 auto 28px;line-height:1.6}
-.kids-card{max-width:380px;margin:auto;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #a92e6020;transition:transform .3s}
-.kids-card:hover{transform:translateY(-7px)}
-.kids-card img{width:100%;height:390px;object-fit:cover;display:block}
-.kids-info{text-align:center;padding:22px}.kids-info h3{color:var(--deep);font-size:22px;margin:0 0 9px}.kids-info p{color:#765e69;line-height:1.5}.price{display:inline-block;margin-top:8px;color:var(--pink);font-size:27px;font-weight:bold}
-.cake-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
-.cake-grid h2{grid-column:1/-1;text-align:center;color:var(--pink)}
-.cake-card{overflow:hidden;border:1px solid #f0cddd;border-radius:16px;background:#fff;box-shadow:0 8px 24px #a92e6010;transition:transform .25s}
-.cake-card:hover{transform:translateY(-6px)}
-.cake-card img{width:100%;height:180px;object-fit:cover;display:block}
-.cake-card div{padding:17px;min-height:115px}.cake-card h3{color:var(--pink);margin:0 0 8px}.cake-card p{font-size:14px;line-height:1.5;margin:0;color:#66535c}
-footer{text-align:center;padding:25px;background:#f8a8c8;color:white;margin-top:40px}
-@media(max-width:850px){.cake-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.cake-grid{grid-template-columns:1fr}.kids-card img{height:330px}}
+:root{--paper:#f4f0e7;--ink:#27231f;--muted:#82796e;--brown:#553322;--cream:#f3dfbd;--cocoa:#3c211b;--line:#d8d0c3;--accent:#bd744b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+header{padding:42px 20px 35px;text-align:center;background:linear-gradient(135deg,#eee2d1,#f8f4ec)}header h1{font:500 clamp(38px,6vw,66px) "Playfair Display",Georgia,serif;letter-spacing:-2px;color:var(--cocoa);margin:0}header p{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:12px 0 0}
+nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:16px;background:rgba(244,240,231,.95);border-block:1px solid var(--line);position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}nav a{color:var(--brown);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;padding:10px 14px;border:1px solid transparent;border-radius:30px}nav a:hover{border-color:var(--accent);color:var(--accent)}
+.intro{text-align:center;padding:65px 18px 22px}.intro h2{font:500 clamp(38px,6vw,66px) "Playfair Display",Georgia,serif;color:var(--cocoa);margin:0 0 12px}.intro p{color:var(--muted);line-height:1.8;font-size:13px}
+.kids-section,.collection-section{max-width:1160px;margin:20px auto 70px;padding:28px 22px}
+.section-title{text-align:center;color:var(--accent);font:500 clamp(28px,4vw,42px) "Playfair Display",Georgia,serif;letter-spacing:1px;margin:0 0 12px}
+.section-desc{text-align:center;color:var(--muted);font-size:12px;margin:0 auto 30px;line-height:1.7}
+.kids-section{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}.kids-section .section-title,.kids-section .section-desc{grid-column:1/-1}.kids-card{background:#fffdf8;overflow:hidden;box-shadow:0 16px 40px #46301d12;transition:transform .35s}.kids-card:hover{transform:translateY(-6px)}.kids-card img{width:100%;height:360px;object-fit:cover;display:block}.kids-info{text-align:left;padding:24px}.kids-info h3{font:500 25px "Playfair Display",Georgia,serif;color:var(--cocoa);margin:0 0 10px}.kids-info p{color:var(--muted);font-size:12px;line-height:1.8;margin:0}.price{display:inline-block;margin-top:15px;color:var(--accent);font-size:21px;font-weight:700}
+.cake-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.cake-grid h2{grid-column:1/-1;text-align:center;color:var(--cocoa);font:500 32px "Playfair Display",Georgia,serif}.cake-card{overflow:hidden;background:#fffdf8;border:1px solid var(--line);transition:transform .3s}.cake-card:hover{transform:translateY(-5px)}.cake-card img{width:100%;height:190px;object-fit:cover;display:block}.cake-card div{padding:17px;min-height:112px}.cake-card h3{font:500 20px "Playfair Display",Georgia,serif;color:var(--cocoa);margin:0 0 8px}.cake-card p{font-size:11px;line-height:1.7;margin:0;color:var(--muted)}
+footer{text-align:center;padding:28px;background:var(--cocoa);color:#e9dfd3;font-size:10px;letter-spacing:1px}
+@media(max-width:850px){.cake-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kids-card img{height:300px}}
+@media(max-width:560px){.kids-section{grid-template-columns:1fr;padding-inline:16px}.cake-grid{grid-template-columns:1fr 1fr;gap:12px}.cake-card img{height:145px}.cake-card div{padding:12px}.cake-card h3{font-size:17px}.kids-card img{height:300px}}
+@media(max-width:380px){.cake-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
