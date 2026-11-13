@@ -1,167 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fff5f8">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <title>Kates Baking | Cakes, Biscuits, Muffins & Catering Across South Africa</title>
-  <meta name="description" content="Discover Kates Baking Catering and Supplies Trade Enterprise. Explore delicious cakes, muffins, biscuits, scones and catering services. Serving customers across South Africa.">
-  <style>
-    :root{--pink:#d94f82;--deep:#a92e60;--soft:#fff0f6;--ink:#34232b;--muted:#725e67;--white:#fff}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-    a{color:inherit}
-    .topline{height:5px;background:linear-gradient(90deg,#f7bfd2,#d94f82,#f9d7e4)}
-    header{position:relative;z-index:5;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid #f5dce6}
-    .brand-lockup{max-width:1180px;margin:auto;padding:17px 28px;display:flex;align-items:center;gap:16px}
-    .brand-logo{width:70px;height:70px;object-fit:contain;border-radius:50%;background:white;box-shadow:0 8px 24px #a92e6020}
-    header h1{font-size:clamp(22px,3vw,30px);letter-spacing:2px;margin:0;color:var(--deep)}
-    header p{margin:6px 0 0;color:var(--muted);font-size:13px;letter-spacing:.5px}
-    nav{display:flex;justify-content:center;gap:clamp(18px,4vw,48px);padding:16px 18px;background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 8px 24px #59263b0b}
-    nav a{text-decoration:none;color:#78475b;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
-    nav a:hover{color:var(--pink)}
-    .hero{min-height:650px;position:relative;overflow:hidden;display:grid;align-items:center;background:radial-gradient(ellipse at 76% 46%,#f9c9da 0,transparent 34%),linear-gradient(120deg,#fff8fb,#ffeaf2 55%,#fff)}
-    .hero{background:#fff3f7}
-    .hero-backdrops{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
-    .hero-backdrop{position:absolute;inset:-2%;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 1.8s ease,transform 8s ease;filter:saturate(.88)}
-    .hero-backdrop.active{opacity:.34;transform:scale(1)}
-    .hero-backdrops:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,247,250,.94) 0%,rgba(255,241,247,.78) 48%,rgba(255,245,249,.55) 100%),linear-gradient(0deg,rgba(255,255,255,.38),transparent 50%)}
-    .hero-inner{z-index:1}
-    @media(max-width:760px){.hero-backdrop.active{opacity:.22}.hero-backdrops:after{background:rgba(255,247,250,.78)}}
-    @media(prefers-reduced-motion:reduce){.hero-backdrop{transition:none;transform:none}}
-    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-    .hero:before{width:480px;height:480px;right:-150px;top:-190px;border:1px solid #e9a9c2aa;box-shadow:0 0 0 35px #f8d8e355,0 0 0 75px #f8d8e322}
-    .hero:after{width:260px;height:260px;left:-120px;bottom:-150px;background:#f7c7d944;filter:blur(3px)}
-    .hero-inner{width:min(1160px,100%);margin:auto;padding:70px 34px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;position:relative;z-index:1}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--pink);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
-    .eyebrow:before{content:"";width:28px;height:1px;background:var(--pink)}
-    .hero h2{font-family:Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:1.02;font-weight:500;letter-spacing:-2px;color:#7f294d;margin:20px 0}
-    .hero-copy>p{font-size:17px;line-height:1.8;color:#715865;max-width:500px}
-    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
-    .button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:15px 25px;border-radius:999px;background:linear-gradient(135deg,#e66b99,#bd3c70);color:#fff;font-size:13px;font-weight:700;letter-spacing:.5px;box-shadow:0 12px 28px #c64d7a45;transition:transform .25s,box-shadow .25s}
-    .button:hover{transform:translateY(-4px);box-shadow:0 18px 34px #c64d7a55}
-    .button.secondary{background:#ffffffa8;color:#a93665;border:1px solid #e9b2c7;box-shadow:none}
-    .hero-art{min-height:430px;position:relative;display:grid;place-items:center;perspective:1000px}
-    .orbit{position:absolute;width:min(390px,80vw);aspect-ratio:1;border:1px solid #e9a9c288;border-radius:50%;transform:rotateX(68deg) rotateZ(-18deg);box-shadow:0 0 0 24px #fff7,0 0 0 25px #e9a9c255}
-    .cake-frame{position:relative;width:min(390px,82vw);height:380px;border:12px solid #fff;border-radius:48% 48% 26px 26px;overflow:hidden;box-shadow:0 35px 65px #8d3b5b35, inset 0 0 0 1px #fff;transform:rotateY(-9deg) rotateX(3deg);animation:float 6s ease-in-out infinite}
-    .cake-frame img{width:100%;height:100%;object-fit:cover;display:block}
-    .float-tag{position:absolute;right:0;bottom:40px;background:#ffffffdf;backdrop-filter:blur(12px);border:1px solid #fff;padding:15px 20px;border-radius:18px;box-shadow:0 15px 35px #8d3b5b20;color:#843251;font-family:Georgia,serif;font-size:17px;transform:rotate(3deg)}
-    .sparkle{position:absolute;color:#d94f82;font-size:28px;animation:twinkle 3s ease-in-out infinite}
-    .s1{top:42px;right:16%}.s2{bottom:55px;left:8%;animation-delay:1s}
-    @keyframes float{0%,100%{transform:translateY(0) rotateY(-9deg) rotateX(3deg)}50%{transform:translateY(-14px) rotateY(-5deg) rotateX(5deg)}}
-    @keyframes twinkle{0%,100%{opacity:.45;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
-    .aura-intro{position:relative;text-align:center;padding:55px 20px;isolation:isolate;animation:auraEnter 2s ease-out both,auraFloat 5s ease-in-out 2s infinite}
-    .aura-glow{position:absolute;z-index:-1;width:340px;height:220px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(218,170,94,.45),rgba(218,170,94,.12) 45%,transparent 75%);filter:blur(35px);animation:auraPulse 4s ease-in-out infinite}
-    .aura-intro h2{color:#80552f;font-family:Georgia,serif;font-size:clamp(42px,7vw,78px);text-shadow:0 5px 25px rgba(184,137,75,.25);margin:15px 0;line-height:1.08;font-weight:500;letter-spacing:0}
-    .aura-tag{letter-spacing:7px;color:#b18a56;font-size:12px}.aura-intro>p{color:#80664b;letter-spacing:2px;font-size:15px;line-height:1.7}.aura-slogan{display:inline-block;margin-top:10px;color:#a47a48;font-style:italic}
-    @keyframes auraEnter{from{opacity:0;transform:translateY(65px) scale(.85);filter:blur(15px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
-    @keyframes auraFloat{0%,100%{translate:0 0}50%{translate:0 -15px}}@keyframes auraPulse{0%,100%{opacity:.5;scale:.9}50%{opacity:1;scale:1.2}}
-    .trust-strip{display:flex;justify-content:center;gap:clamp(25px,6vw,90px);flex-wrap:wrap;padding:22px;background:#fff;border-bottom:1px solid #f7e6ed;color:#8b5b6e;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
-    .section{padding:90px 24px}
-    .section-inner{max-width:1100px;margin:auto}
-    .section-heading{text-align:center;margin-bottom:42px}
-    .section-heading span{color:var(--pink);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
-    .section-heading h2{font-family:Georgia,serif;font-size:clamp(34px,4vw,48px);font-weight:500;color:#81304f;margin:12px 0}
-    .section-heading p{max-width:650px;margin:0 auto;color:var(--muted);line-height:1.7}
-    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .feature{background:linear-gradient(145deg,#fff,#fff4f8);border:1px solid #f4dce6;border-radius:22px;padding:28px;box-shadow:0 14px 35px #6b29400b;transition:transform .3s,box-shadow .3s}
-    .feature:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:0 22px 45px #6b294018}
-    .feature .number{font-family:Georgia,serif;font-size:35px;color:#e5a0b9}
-    .feature h3{color:#9f3c64;font-family:Georgia,serif;font-size:23px;font-weight:500;margin:14px 0 9px}
-    .feature p{color:var(--muted);line-height:1.7;margin:0;font-size:14px}
-    .about{background:linear-gradient(135deg,#fff0f6,#fff9fb);text-align:center}
-    .about p{max-width:790px;margin:15px auto;color:#715865;line-height:1.9}
-    .contact{text-align:center;background:#fff}
-    .contact-details{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px}
-    .contact-details p{margin:0;padding:14px 20px;background:#fff4f8;border:1px solid #f4dce6;border-radius:14px;color:#815064}
-    footer{background:#7f294d;color:#fff;text-align:center;padding:28px 18px;font-size:12px;letter-spacing:.6px}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    @media(max-width:760px){.brand-lockup{padding:14px 18px}.brand-logo{width:58px;height:58px}.brand-lockup p{font-size:11px}.hero-inner{grid-template-columns:1fr;text-align:center;padding:58px 22px 65px;gap:10px}.hero-copy>p{margin:0 auto}.eyebrow{justify-content:center}.actions{justify-content:center}.hero-art{min-height:370px}.cake-frame{height:320px}.feature-grid{grid-template-columns:1fr}.section{padding:68px 20px}nav{gap:17px;padding:14px 8px}nav a{font-size:10px;letter-spacing:.5px}.trust-strip{font-size:10px;gap:18px}}
-    @media(max-width:760px){.aura-intro{padding:42px 10px}.aura-tag{letter-spacing:5px}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f0e7">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>Kates Baking | Cakes, Catering & Baking Supplies South Africa</title>
+<meta name="description" content="Kates Baking Catering and Supplies Trade Enterprise — beautiful celebration cakes, freshly baked treats, catering and baking supplies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4f0e7;--ink:#27231f;--muted:#82796e;--brown:#553322;--cream:#f3dfbd;--cocoa:#3c211b;--line:#d8d0c3;--accent:#bd744b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}
+.topbar{min-height:72px;padding:12px 5vw;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);background:rgba(244,240,231,.94);position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}
+.brand-lock{display:flex;align-items:center;gap:12px;min-width:max-content}.brand-lock img{width:42px;height:42px;object-fit:contain;border-radius:50%}.brand{font:700 20px "Playfair Display",serif;letter-spacing:-.6px}.brand span{color:var(--accent)}
+.nav{display:flex;gap:clamp(14px,2.7vw,34px);align-items:center;font-size:10px;letter-spacing:1.4px;text-transform:uppercase}.nav a:hover{color:var(--accent)}.nav-cta{border:1px solid var(--ink);padding:11px 16px;border-radius:30px}
+.intro{min-height:calc(92vh - 72px);padding:8vh 9vw 7vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5vw;position:relative;overflow:hidden}
+.kicker{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:25px}
+.intro h1{font:500 clamp(62px,9vw,130px)/.82 "Playfair Display",serif;letter-spacing:-.065em;margin:0;max-width:650px}.intro h1 em{font-weight:400;color:var(--accent)}
+.intro-copy{font-size:13px;line-height:1.9;color:var(--muted);max-width:360px;margin:30px 0}
+.pill{display:inline-flex;align-items:center;gap:24px;padding:14px 20px;border-radius:30px;background:var(--ink);color:var(--paper);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;transition:.25s}.pill:hover{background:var(--accent);transform:translateY(-2px)}
+.intro-art{height:min(65vh,590px);position:relative;display:grid;place-items:center}.intro-art:before{content:"";position:absolute;width:min(39vw,480px);aspect-ratio:1;border-radius:50%;background:#e8dfcf}.intro-art img{position:relative;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 24px 25px #46301d22);animation:float 6s ease-in-out infinite}.side-note{position:absolute;right:0;bottom:4%;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;writing-mode:vertical-rl;color:var(--muted)}
+@keyframes float{50%{transform:translateY(-13px) rotate(1deg)}}
+.scroll-hint{position:absolute;bottom:28px;left:9vw;display:flex;gap:13px;align-items:center;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted)}.scroll-hint:before{content:"";height:1px;width:35px;background:var(--accent)}
+.story-intro{text-align:center;padding:95px 20px 55px}.story-intro h2{font:500 clamp(40px,6vw,76px)/.98 "Playfair Display",serif;letter-spacing:-.045em;margin:0}.story-intro p{font-size:12px;line-height:1.8;color:var(--muted);max-width:390px;margin:22px auto 0}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;align-items:start;max-width:1200px;margin:auto;padding:0 7vw 10vh;gap:5vw}.steps{position:relative}.step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;padding:8vh 2vw;max-width:410px}.step-number{font-size:9px;letter-spacing:2px;color:var(--accent);margin-bottom:25px}.step h3{font:500 clamp(38px,5vw,66px)/.94 "Playfair Display",serif;letter-spacing:-.04em;margin:0 0 22px}.step p{font-size:12px;line-height:1.9;color:var(--muted);max-width:310px}.step .micro{margin-top:30px;font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:var(--accent)}
+.sticky-stage{height:100vh;position:sticky;top:72px;display:grid;place-items:center;overflow:hidden;align-self:start}.stage-bg{position:absolute;width:min(40vw,490px);aspect-ratio:1;border-radius:50%;background:#e9e0d1;transition:background .8s}.stage-caption{position:absolute;top:12%;left:8%;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.cake-visual{width:min(36vw,420px);height:340px;position:relative;z-index:2;transform:translateY(15px);filter:drop-shadow(0 28px 18px #3a291c20)}.plate{position:absolute;bottom:15px;left:4%;width:92%;height:42px;border-radius:50%;background:linear-gradient(#fffdf8,#d9d0c2);box-shadow:0 8px 12px #4c3b291c}.cake-base{position:absolute;bottom:42px;left:18%;width:64%;height:100px;border-radius:15px 15px 24px 24px;background:linear-gradient(90deg,#a96d3e,#d69a5c 30%,#bd7b45 70%,#8f552f);box-shadow:inset 0 -12px 0 #8e522f}.cream-layer{position:absolute;bottom:126px;left:18%;width:64%;height:34px;border-radius:50%;background:linear-gradient(90deg,#e7c99e,#fff0d4 50%,#dfbd8f)}.top-layer{position:absolute;bottom:155px;left:18%;width:64%;height:34px;border-radius:50%;background:linear-gradient(90deg,#bd804a,#edbd7e 50%,#a96d3e)}.chocolate{position:absolute;bottom:41px;left:18%;width:64%;height:145px;border-radius:15px 15px 25px 25px;background:linear-gradient(90deg,#321a17,#6a3929 48%,#351c18);opacity:0;transition:opacity .7s}.berry{position:absolute;bottom:210px;left:49%;width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e58b78,#9b3033 65%,#63252a);opacity:0;transition:opacity .7s}.stage-ingredient{position:absolute;opacity:0;transition:all .7s;font:italic 15px "Playfair Display",serif;color:var(--accent)}.stage-ingredient.one{top:24%;left:7%}.stage-ingredient.two{top:38%;right:4%}.stage-ingredient.three{bottom:23%;left:5%}.sticky-stage[data-step="1"] .stage-ingredient.one,.sticky-stage[data-step="2"] .stage-ingredient.two,.sticky-stage[data-step="3"] .stage-ingredient.three{opacity:1;transform:translateY(-5px)}.sticky-stage[data-step="3"] .chocolate,.sticky-stage[data-step="3"] .berry{opacity:1}.sticky-stage[data-step="3"] .stage-bg{background:#dfd0bd}
+.story-end{background:var(--cocoa);color:var(--paper);padding:13vh 8vw;text-align:center}.story-end .kicker{color:#d7ad8c}.story-end h2{font:500 clamp(48px,7vw,92px)/.9 "Playfair Display",serif;letter-spacing:-.05em;max-width:850px;margin:0 auto 28px}.story-end p{font-size:12px;line-height:1.9;color:#c7b5a8;max-width:430px;margin:0 auto 30px}
+.shop{padding:12vh 7vw}.shop-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:45px;gap:20px}.shop-head h2{font:500 clamp(42px,6vw,72px)/.95 "Playfair Display",serif;letter-spacing:-.05em;margin:0}.shop-head p{font-size:11px;color:var(--muted);max-width:250px;line-height:1.8}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product{min-width:0}.product-photo{height:300px;background:#e8dfd1;overflow:hidden;position:relative}.product-photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s}.product:hover img{transform:scale(1.05)}.product-meta{padding:17px 0;border-bottom:1px solid var(--line)}.product-meta h3{font:500 23px "Playfair Display",serif;margin:0 0 7px}.product-meta p{font-size:11px;color:var(--muted);margin:0;line-height:1.7}.product .add{display:inline-block;margin-top:15px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+.footer{padding:45px 7vw;background:#e9e2d6;display:flex;justify-content:space-between;gap:25px;align-items:center}.footer small{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}.footer .brand{font-size:24px}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.nav{gap:14px}}
+@media(max-width:760px){.topbar{flex-wrap:wrap;justify-content:center}.brand-lock{margin-right:auto}.nav{width:100%;justify-content:center;flex-wrap:wrap;font-size:9px}.intro{grid-template-columns:1fr;padding:7vh 8vw 12vh;gap:0}.intro-art{height:38vh;grid-row:1}.intro h1{font-size:clamp(65px,18vw,105px)}.scroll-hint{bottom:20px}.story-grid{display:flex;flex-direction:column;padding:0 7vw}.sticky-stage{position:sticky;top:104px;height:42vh;width:100%;order:0;z-index:3;background:var(--paper)}.sticky-stage .stage-bg{width:65vw}.cake-visual{width:min(75vw,350px);height:260px;transform:scale(.82) translateY(15px)}.stage-caption{top:7%;left:4%}.step{min-height:48vh;padding:8vh 2vw;max-width:none}.steps{width:100%}.story-grid{gap:0}.story-intro{padding:75px 7vw 30px}.shop{padding:9vh 6vw}.shop-head{display:block}.shop-head p{margin-top:15px}.footer{align-items:flex-start;flex-direction:column}.stage-ingredient{font-size:12px}}
+@media(max-width:430px){.products{grid-template-columns:1fr}.product-photo{height:290px}.nav{gap:10px}.cake-visual{transform:scale(.72) translateY(15px)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-  <div class="topline"></div>
-  <header>
-    <div class="brand-lockup">
-      <img class="brand-logo" src="https://katesbakingcateringandsuppliestradeenterprise.co.za/favicon.png?v=2" alt="Kates Baking logo">
-      <div><h1>KATES BAKING</h1><p>Catering &amp; Supplies Trade Enterprise (PTY) LTD</p></div>
-    </div>
-  </header>
-  <nav aria-label="Main navigation">
-    <a href="#">Home</a><a href="product.html">Products</a><a href="catering.html">Catering</a><a href="contact.html">Contact</a>
-  </nav>
-  <main>
-    <section class="hero">
-      <div class="hero-backdrops" aria-hidden="true">
-        <div class="hero-backdrop active" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"></div>
-        <div class="hero-backdrop" style="background-image:url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"></div>
-        <div class="hero-backdrop" style="background-image:url('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"></div>
-      </div>
-      <div class="hero-inner">
-        <div class="aura-intro hero-copy">
-          <div class="aura-glow"></div>
-          <span class="aura-tag">WELCOME TO</span>
-          <h2>Kate's Baking</h2>
-          <p>Catering &amp; Supplies Trade Enterprise</p>
-          <span class="aura-slogan">Made with love. Served with elegance.</span>
-          <div class="actions"><a href="product.html" class="button">Explore Our Products</a><a href="contact.html" class="button secondary">Get in Touch</a></div>
-        </div>
-        <div class="hero-art" aria-label="A beautifully decorated celebration cake">
-          <div class="orbit"></div><span class="sparkle s1">✦</span><span class="sparkle s2">✧</span>
-          <div class="cake-frame"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1000&amp;q=90" alt="Decorated celebration cake"></div>
-          <div class="float-tag">Baked with care ♡</div>
-        </div>
-      </div>
-    </section>
-    <div class="trust-strip"><span>Beautiful celebration cakes</span><span>Freshly baked favourites</span><span>Serving across South Africa</span></div>
-    <section class="section" id="catering">
-      <div class="section-inner">
-        <div class="section-heading reveal"><span>Discover the collection</span><h2>A little joy in every bite.</h2><p>Explore delicious treats for celebrations, gatherings and everyday moments.</p></div>
-        <div class="feature-grid">
-          <article class="feature reveal"><div class="number">01</div><h3>Cakes</h3><p>From homestyle favourites to beautiful celebration and customized cakes, made to bring your moments to life.</p></article>
-          <article class="feature reveal"><div class="number">02</div><h3>Biscuits &amp; Muffins</h3><p>Enjoy familiar favourites and sweet treats, including biscuits and freshly baked muffins.</p></article>
-          <article class="feature reveal"><div class="number">03</div><h3>Scones &amp; Catering</h3><p>Thoughtful baked treats and catering services for different occasions and gatherings.</p></article>
-        </div>
-        <div style="text-align:center;margin-top:35px"><a href="product.html" class="button">View Products</a></div>
-      </div>
-    </section>
-    <section class="section about">
-      <div class="section-inner reveal">
-        <div class="section-heading"><span>Our story</span><h2>About Kates Baking</h2></div>
-        <p>Kates Baking Catering &amp; Supplies Trade Enterprise (PTY) LTD provides delicious baked goods and catering services made with care and quality ingredients.</p>
-        <p>We provide cakes, muffins, biscuits, scones and other delicious treats for different occasions, serving customers across South Africa.</p>
-      </div>
-    </section>
-    <section class="section contact">
-      <div class="section-inner reveal">
-        <div class="section-heading"><span>We would love to hear from you</span><h2>Contact Kates Baking</h2><p>Get in touch with us for product and catering enquiries.</p></div>
-        <div class="contact-details"><p>☎ Phone: Coming Soon</p><p>▣ WhatsApp: Coming Soon</p><p>✉ Email: Coming Soon</p><p>⌖ Location: South Africa</p></div>
-      </div>
-    </section>
-  </main>
-  <footer>© Kates Baking Catering &amp; Supplies Trade Enterprise (PTY) LTD</footer>
-  <script>
-    const heroSlides = document.querySelectorAll('.hero-backdrop');
-    if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      let heroIndex = 0;
-      window.setInterval(() => {
-        heroSlides[heroIndex].classList.remove('active');
-        heroIndex = (heroIndex + 1) % heroSlides.length;
-        heroSlides[heroIndex].classList.add('active');
-      }, 6000);
-    }
-    const revealItems = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-      }, { threshold: 0.12 });
-      revealItems.forEach(item => observer.observe(item));
-    } else { revealItems.forEach(item => item.classList.add('visible')); }
-  </script>
+<header class="topbar">
+ <a class="brand-lock" href="index.html"><img src="/favicon.png" alt="Kates Baking logo"><span class="brand">kates<span>baking.</span></span></a>
+ <nav class="nav"><a href="#story">Our Story</a><a href="cakes.html">Cakes</a><a href="product.html">Products</a><a href="catering.html">Catering</a><a href="contact.html">Contact</a></nav>
+ <a class="nav-cta" href="contact.html">Enquire ↗</a>
+</header>
+<main>
+<section class="intro">
+ <div><div class="kicker">Kates Baking · Catering · Supplies Trade Enterprise</div><h1>Small by<br>nature.<br><em>Wild</em> by<br>taste.</h1><p class="intro-copy">Beautifully baked treats, thoughtful catering and quality baking supplies — prepared with care for everyday moments and special occasions.</p><a class="pill" href="cakes.html">Explore our cakes <span>↘</span></a></div>
+ <div class="intro-art"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=90" alt="Beautifully decorated celebration cake"><div class="side-note">Baked with intention · South Africa</div></div>
+ <div class="scroll-hint">Scroll to discover</div>
+</section>
+<section class="story" id="story">
+ <div class="story-intro"><div class="kicker">Made by Kates</div><h2>Good things<br>take a little layering.</h2><p>From the first ingredients to the final finishing touch, every order is prepared with care and attention.</p></div>
+ <div class="story-grid">
+  <div class="sticky-stage" id="stage" data-step="0"><div class="stage-bg"></div><div class="stage-caption">The care behind every order</div><div class="stage-ingredient one">quality ingredients</div><div class="stage-ingredient two">careful preparation</div><div class="stage-ingredient three">beautiful finishing touches</div><div class="cake-visual"><div class="plate"></div><div class="cake-base"></div><div class="cream-layer"></div><div class="top-layer"></div><div class="chocolate"></div><div class="berry"></div></div></div>
+  <div class="steps">
+   <article class="step" data-step="0"><div class="step-number">01 / THE FOUNDATION</div><h3>It starts<br>with quality<br>ingredients.</h3><p>We begin with carefully selected ingredients and reliable supplies to create baked goods that look beautiful and taste delicious.</p><div class="micro">Quality comes first.</div></article>
+   <article class="step" data-step="1"><div class="step-number">02 / THE MIDDLE</div><h3>Made with<br>care at every<br>step.</h3><p>Whether it is a celebration cake, a catering order or a baking supply request, we pay attention to the details that matter.</p><div class="micro">Thoughtful preparation.</div></article>
+   <article class="step" data-step="2"><div class="step-number">03 / THE NEXT LAYER</div><h3>Ready for<br>your occasion.</h3><p>We bring the elements together with care, making sure your order is presented neatly and prepared for your event or kitchen.</p><div class="micro">Made for your needs.</div></article>
+   <article class="step" data-step="3"><div class="step-number">04 / THE FINISH</div><h3>The finishing<br>touch matters.</h3><p>From beautifully finished cakes to well-organised catering and useful baking supplies, we aim to make every experience a good one.</p><div class="micro">Prepared with pride.</div></article>
+  </div>
+ </div>
+</section>
+<section class="story-end"><div class="kicker">The Kates way</div><h2>Made with care.<br>Made to <em>celebrate.</em></h2><p>We bring baking, catering and supplies together under one business, with a focus on dependable service, thoughtful presentation and quality.</p><a class="pill" href="contact.html">Let's plan your order <span>↗</span></a></section>
+<section class="shop" id="shop">
+ <div class="shop-head"><div><div class="kicker">Baking · Catering · Supplies</div><h2>Something lovely<br>for every occasion.</h2></div><p>Explore our services and baked favourites. Contact us to discuss your requirements and request a quote.</p></div>
+ <div class="products">
+  <article class="product"><div class="product-photo"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=85" alt="Beautiful celebration cake"></div><div class="product-meta"><h3>Celebration Cakes</h3><p>Homestyle favourites · kids cakes · custom celebrations</p></div><a class="add" href="cakes.html">Explore cakes ↗</a></article>
+  <article class="product"><div class="product-photo"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=85" alt="Freshly baked biscuits"></div><div class="product-meta"><h3>Biscuits & Muffins</h3><p>Melting moments · jam tarts · muffins and more</p></div><a class="add" href="product.html">Explore products ↗</a></article>
+  <article class="product"><div class="product-photo"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=85" alt="Freshly baked treats"></div><div class="product-meta"><h3>Scones & Catering</h3><p>Thoughtful treats for gatherings and special occasions</p></div><a class="add" href="catering.html">Discover catering ↗</a></article>
+  <article class="product"><div class="product-photo"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=85" alt="Baking ingredients and tools"></div><div class="product-meta"><h3>Baking Supplies</h3><p>Ingredients · tools · kitchen essentials</p></div><a class="add" href="product.html">View products ↗</a></article>
+ </div>
+</section>
+</main>
+<footer class="footer" id="footer"><div><a class="brand" href="index.html">kates<span>baking.</span></a><div style="font-size:10px;letter-spacing:1px;margin-top:8px">CATERING & SUPPLIES TRADE ENTERPRISE (PTY) LTD</div></div><small>Baking · Catering · Supplies · South Africa</small><small>© 2026 Kates Baking Catering & Supplies Trade Enterprise</small></footer>
+<script>
+const stage=document.getElementById('stage');
+const steps=[...document.querySelectorAll('.step')];
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)stage.dataset.step=entry.target.dataset.step;});},{rootMargin:'-38% 0px -38% 0px',threshold:0});steps.forEach(step=>observer.observe(step));}
+</script>
 </body>
 </html>
