@@ -44,6 +44,12 @@
     .s1{top:42px;right:16%}.s2{bottom:55px;left:8%;animation-delay:1s}
     @keyframes float{0%,100%{transform:translateY(0) rotateY(-9deg) rotateX(3deg)}50%{transform:translateY(-14px) rotateY(-5deg) rotateX(5deg)}}
     @keyframes twinkle{0%,100%{opacity:.45;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+    .aura-intro{position:relative;text-align:center;padding:55px 20px;isolation:isolate;animation:auraEnter 2s ease-out both,auraFloat 5s ease-in-out 2s infinite}
+    .aura-glow{position:absolute;z-index:-1;width:340px;height:220px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(218,170,94,.45),rgba(218,170,94,.12) 45%,transparent 75%);filter:blur(35px);animation:auraPulse 4s ease-in-out infinite}
+    .aura-intro h2{color:#80552f;font-family:Georgia,serif;font-size:clamp(42px,7vw,78px);text-shadow:0 5px 25px rgba(184,137,75,.25);margin:15px 0;line-height:1.08;font-weight:500;letter-spacing:0}
+    .aura-tag{letter-spacing:7px;color:#b18a56;font-size:12px}.aura-intro>p{color:#80664b;letter-spacing:2px;font-size:15px;line-height:1.7}.aura-slogan{display:inline-block;margin-top:10px;color:#a47a48;font-style:italic}
+    @keyframes auraEnter{from{opacity:0;transform:translateY(65px) scale(.85);filter:blur(15px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+    @keyframes auraFloat{0%,100%{translate:0 0}50%{translate:0 -15px}}@keyframes auraPulse{0%,100%{opacity:.5;scale:.9}50%{opacity:1;scale:1.2}}
     .trust-strip{display:flex;justify-content:center;gap:clamp(25px,6vw,90px);flex-wrap:wrap;padding:22px;background:#fff;border-bottom:1px solid #f7e6ed;color:#8b5b6e;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
     .section{padding:90px 24px}
     .section-inner{max-width:1100px;margin:auto}
@@ -66,6 +72,7 @@
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
     .reveal.visible{opacity:1;transform:translateY(0)}
     @media(max-width:760px){.brand-lockup{padding:14px 18px}.brand-logo{width:58px;height:58px}.brand-lockup p{font-size:11px}.hero-inner{grid-template-columns:1fr;text-align:center;padding:58px 22px 65px;gap:10px}.hero-copy>p{margin:0 auto}.eyebrow{justify-content:center}.actions{justify-content:center}.hero-art{min-height:370px}.cake-frame{height:320px}.feature-grid{grid-template-columns:1fr}.section{padding:68px 20px}nav{gap:17px;padding:14px 8px}nav a{font-size:10px;letter-spacing:.5px}.trust-strip{font-size:10px;gap:18px}}
+    @media(max-width:760px){.aura-intro{padding:42px 10px}.aura-tag{letter-spacing:5px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
@@ -73,7 +80,7 @@
   <div class="topline"></div>
   <header>
     <div class="brand-lockup">
-      <img class="brand-logo" src="logo.svg" alt="Kates Baking logo">
+      <img class="brand-logo" src="/favicon.png" alt="Kates Baking logo">
       <div><h1>KATES BAKING</h1><p>Catering &amp; Supplies Trade Enterprise (PTY) LTD</p></div>
     </div>
   </header>
@@ -83,10 +90,12 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-copy">
-          <div class="eyebrow">Welcome to Kates Baking</div>
-          <h2>Made for your sweetest moments.</h2>
-          <p>Your trusted baking, catering and supplies partner, creating beautiful treats with care. From homestyle favourites to celebration cakes, make every occasion a little sweeter.</p>
+        <div class="aura-intro hero-copy">
+          <div class="aura-glow"></div>
+          <span class="aura-tag">WELCOME TO</span>
+          <h2>Kate's Baking</h2>
+          <p>Catering &amp; Supplies Trade Enterprise</p>
+          <span class="aura-slogan">Made with love. Served with elegance.</span>
           <div class="actions"><a href="product.html" class="button">Explore Our Products</a><a href="contact.html" class="button secondary">Get in Touch</a></div>
         </div>
         <div class="hero-art" aria-label="A beautifully decorated celebration cake">
