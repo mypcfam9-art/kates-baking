@@ -23,6 +23,14 @@
     nav a{text-decoration:none;color:#78475b;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
     nav a:hover{color:var(--pink)}
     .hero{min-height:650px;position:relative;overflow:hidden;display:grid;align-items:center;background:radial-gradient(ellipse at 76% 46%,#f9c9da 0,transparent 34%),linear-gradient(120deg,#fff8fb,#ffeaf2 55%,#fff)}
+    .hero{background:#fff3f7}
+    .hero-backdrops{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+    .hero-backdrop{position:absolute;inset:-2%;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 1.8s ease,transform 8s ease;filter:saturate(.88)}
+    .hero-backdrop.active{opacity:.34;transform:scale(1)}
+    .hero-backdrops:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,247,250,.94) 0%,rgba(255,241,247,.78) 48%,rgba(255,245,249,.55) 100%),linear-gradient(0deg,rgba(255,255,255,.38),transparent 50%)}
+    .hero-inner{z-index:1}
+    @media(max-width:760px){.hero-backdrop.active{opacity:.22}.hero-backdrops:after{background:rgba(255,247,250,.78)}}
+    @media(prefers-reduced-motion:reduce){.hero-backdrop{transition:none;transform:none}}
     .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
     .hero:before{width:480px;height:480px;right:-150px;top:-190px;border:1px solid #e9a9c2aa;box-shadow:0 0 0 35px #f8d8e355,0 0 0 75px #f8d8e322}
     .hero:after{width:260px;height:260px;left:-120px;bottom:-150px;background:#f7c7d944;filter:blur(3px)}
@@ -89,6 +97,11 @@
   </nav>
   <main>
     <section class="hero">
+      <div class="hero-backdrops" aria-hidden="true">
+        <div class="hero-backdrop active" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"></div>
+        <div class="hero-backdrop" style="background-image:url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"></div>
+        <div class="hero-backdrop" style="background-image:url('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"></div>
+      </div>
       <div class="hero-inner">
         <div class="aura-intro hero-copy">
           <div class="aura-glow"></div>
@@ -133,6 +146,15 @@
   </main>
   <footer>© Kates Baking Catering &amp; Supplies Trade Enterprise (PTY) LTD</footer>
   <script>
+    const heroSlides = document.querySelectorAll('.hero-backdrop');
+    if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let heroIndex = 0;
+      window.setInterval(() => {
+        heroSlides[heroIndex].classList.remove('active');
+        heroIndex = (heroIndex + 1) % heroSlides.length;
+        heroSlides[heroIndex].classList.add('active');
+      }, 6000);
+    }
     const revealItems = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => {
