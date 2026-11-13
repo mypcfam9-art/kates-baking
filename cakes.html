@@ -1,113 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Cakes Coming Soon | Kates Baking</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #fff7fb;
-            color: #333;
-            text-align: center;
-        }
-
-        header {
-            background: #e91e63;
-            color: white;
-            padding: 25px;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            background: white;
-            padding: 15px;
-        }
-
-        nav a {
-            color: #e91e63;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 12px;
-        }
-
-        .coming-soon {
-            padding: 100px 20px;
-        }
-
-        .coming-soon h2 {
-            color: #e91e63;
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
-
-        .coming-soon p {
-            font-size: 20px;
-            max-width: 650px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-
-        .back-button {
-            display: inline-block;
-            background: #e91e63;
-            color: white;
-            text-decoration: none;
-            padding: 13px 28px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        .back-button:hover {
-            background: #c2185b;
-        }
-
-        footer {
-            background: #e91e63;
-            color: white;
-            padding: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore All Cakes | Kates Baking</title>
+<style>
+:root{--pink:#d94f82;--deep:#92385d;--soft:#fff0f6;--ink:#49343e}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:#fff}
+header{text-align:center;padding:38px 18px;background:linear-gradient(135deg,#ffe5ef,#fff8fb)}
+header h1{margin:0;color:var(--deep);font-family:Georgia,serif;font-size:clamp(32px,5vw,48px)}
+header p{color:#805c6c;margin:10px 0 0}
+nav{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:17px;background:white;box-shadow:0 4px 18px #0000000b;position:sticky;top:0;z-index:5}
+nav a{color:var(--pink);font-weight:bold;text-decoration:none;padding:10px 16px;border-radius:30px;background:var(--soft);font-size:13px}
+.intro{text-align:center;padding:45px 18px 20px}.intro h2{font-family:Georgia,serif;color:var(--deep);font-size:36px;margin:0 0 10px}.intro p{color:#765e69;line-height:1.6}
+.kids-section,.collection-section{max-width:1120px;margin:25px auto 65px;padding:28px 22px}
+.section-title{text-align:center;color:var(--pink);font-size:30px;letter-spacing:2px;margin:0 0 12px}
+.section-desc{text-align:center;color:#765e69;margin:0 auto 28px;line-height:1.6}
+.kids-card{max-width:380px;margin:auto;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 16px 40px #a92e6020;transition:transform .3s}
+.kids-card:hover{transform:translateY(-7px)}
+.kids-card img{width:100%;height:390px;object-fit:cover;display:block}
+.kids-info{text-align:center;padding:22px}.kids-info h3{color:var(--deep);font-size:22px;margin:0 0 9px}.kids-info p{color:#765e69;line-height:1.5}.price{display:inline-block;margin-top:8px;color:var(--pink);font-size:27px;font-weight:bold}
+.cake-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.cake-grid h2{grid-column:1/-1;text-align:center;color:var(--pink)}
+.cake-card{overflow:hidden;border:1px solid #f0cddd;border-radius:16px;background:#fff;box-shadow:0 8px 24px #a92e6010;transition:transform .25s}
+.cake-card:hover{transform:translateY(-6px)}
+.cake-card img{width:100%;height:180px;object-fit:cover;display:block}
+.cake-card div{padding:17px;min-height:115px}.cake-card h3{color:var(--pink);margin:0 0 8px}.cake-card p{font-size:14px;line-height:1.5;margin:0;color:#66535c}
+footer{text-align:center;padding:25px;background:#f8a8c8;color:white;margin-top:40px}
+@media(max-width:850px){.cake-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.cake-grid{grid-template-columns:1fr}.kids-card img{height:330px}}
+</style>
 </head>
-
 <body>
+<header><h1>Kates Baking</h1><p>Catering &amp; Supplies Trade Enterprise (PTY) LTD</p></header>
+<nav><a href="index.html">Home</a><a href="product.html">Products</a><a href="#kids-cakes">Kids Cakes</a><a href="#cake-collection">Cake Collection</a><a href="contact.html">Contact</a></nav>
+<main>
+<div class="intro"><h2>Explore All Cakes</h2><p>Find a beautiful cake for every celebration and special moment.</p></div>
+<section class="kids-section" id="kids-cakes">
+<h2 class="section-title">KIDS CAKES</h2>
+<p class="section-desc">Fun, colourful cakes made to make little celebrations extra special.</p>
+<article class="kids-card">
+<img src="kids-mickey-cake.jpg" alt="Pink Mickey Mouse themed children's birthday cake">
+<div class="kids-info"><h3>Mickey Mouse Kids Cake</h3><p>A playful pink birthday cake decorated with Mickey Mouse details and colourful balloons.</p><span class="price">R650</span></div>
+</article>
+</section>
+<section class="collection-section" id="cake-collection">
+<h2 class="section-title">CAKE COLLECTION</h2>
+<p class="section-desc">Explore more of our cake favourites.</p>
+        <div class="cake-grid">
+            <h2>Cake Collection</h2>
 
-    <header>
-        <h1>Kates Baking</h1>
-        <p>Catering & Supplies Trade Enterprise</p>
-    </header>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Classic vanilla cake">
+                <div><h3>Classic Vanilla Cake</h3><p>Light vanilla sponge with smooth, delicate frosting.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chocolate fudge cake">
+                <div><h3>Chocolate Fudge Cake</h3><p>Rich chocolate layers with a soft, fudgy finish.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1557979619-445218f326b9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Red velvet cake">
+                <div><h3>Red Velvet Cake</h3><p>Velvety red sponge finished with cream cheese frosting.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Carrot cake">
+                <div><h3>Carrot Cake</h3><p>Moist spiced carrot cake with a creamy topping.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Black forest cake">
+                <div><h3>Black Forest Cake</h3><p>Chocolate sponge layered with cherries and cream.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Lemon drizzle cake">
+                <div><h3>Lemon Drizzle Cake</h3><p>Fresh lemon sponge with a bright citrus drizzle.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Marble cake">
+                <div><h3>Marble Cake</h3><p>Beautiful swirls of vanilla and chocolate sponge.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Strawberry cream cake">
+                <div><h3>Strawberry Cream Cake</h3><p>Soft sponge with strawberries and smooth cream.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Chocolate ganache cake">
+                <div><h3>Chocolate Ganache Cake</h3><p>Decadent chocolate cake covered in glossy ganache.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coconut cake">
+                <div><h3>Coconut Cake</h3><p>Soft coconut sponge with a gently sweet finish.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Coffee cake">
+                <div><h3>Coffee Cake</h3><p>Aromatic coffee sponge made for relaxed teatime.</p></div>
+            </article>
+            <article class="cake-card">
+                <img src="https://images.unsplash.com/photo-1575377427642-087cf684f04d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Rainbow layer cake">
+                <div><h3>Rainbow Layer Cake</h3><p>Colorful layered sponge for joyful celebrations.</p></div>
+            </article>
+        </div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="product.html">Products</a>
-        <a href="contact.html">Contact</a>
-    </nav>
 
-    <section class="coming-soon">
-        <h2>🍰 Cakes Coming Soon!</h2>
-
-        <p>
-            Our delicious cakes are currently being prepared.
-            Our full cake selection will be available soon.
-            Please check back with us for updates!
-        </p>
-
-        <a href="product.html" class="back-button">
-            Back to Products
-        </a>
-    </section>
-
-    <footer>
-        <p>© 2026 Kates Baking Catering and Supplies Trade Enterprise</p>
-    </footer>
-
+</section>
+</main>
+<footer>© 2026 Kates Baking Catering &amp; Supplies Trade Enterprise (PTY) LTD</footer>
 </body>
 </html>
-
-
